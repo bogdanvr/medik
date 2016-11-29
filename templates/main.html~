@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block additional_css %}
+  <link type="text/css" href="{% static "main.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <div id="header">
+    <h1>Официальный сайт</h1>
+ <ul>
+
+
+      {% url "main" as page_url %}
+      <li><a href="{{ page_url }}"{% if page_url == current_url %} class="current"{% endif %}>Главная</a></li>
+
+	  {% url "news_index" as page_url %}
+      <li class="indented"><a href="{{ page_url }}"{% if page_url == current_url %} class="current"{% endif %}>Новости</a></li>
+
+	  {% url "guestbook" as page_url %}	
+	  <li><a href="{{ page_url }}"{% if page_url == current_url %}
+	  class="current"{% endif %}>Гостевая</a></li>
+	  
+
+      
+
+    </ul>
+  </div>
+  <div id="leftmenu">
+   
+  </div>
+  <div id="main">
+    {% block main %}
+    {% endblock %}
+  </div>
+  <div id="footer">
+    <p>Все права принадлежат разработчикам сайта.</p>
+  </div>
+{% endblock %}

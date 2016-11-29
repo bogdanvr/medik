@@ -1,0 +1,26 @@
+ <div class="navigation">
+                 <div id="mainmenu">
+            <ul>
+
+              {% url "authorview" as page_url %}
+                <li{% if is_authorview %} class="current"{% endif %}><a href="{{ page_url }}">Автор</a></li>
+
+              {% url "archive" as page_url %}
+                 <li{% if is_article %} class="current"{% endif %}><a href="{{ page_url }}">Статьи</a></li>
+
+              {% url "main" as page_url %}
+              <li{% if is_main %} class="current"{% endif %}><a href="{{ page_url }}">Книги</a></li>
+
+            {% url "news_index" as page_url %}
+              <li{% if is_news %} class="current"{% endif %}><a href="{{ page_url }}">Новости</a></li>
+
+            {% url "contacts" as page_url %}
+            <li{% if is_contacts %} class="current"{% endif %}><a href="{{ page_url }}">Контакты</a></li>
+
+
+            </ul>
+          </div>
+
+
+
+         </div>

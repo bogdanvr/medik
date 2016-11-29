@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% load thumbnail %}
+{% block title %}Главная страница{% endblock %}
+{% block main %}
+
+ <div class="wrapper">
+   <div class="header2">
+     <h1>{{ tovar.name }}</h1>
+   </div>
+   <div class="body">
+     <div class="item2">
+       <img class="full" src="{{tovar.image}}" alt="изображение">
+       <span class="price">{{tovar.price}} P</span>
+       <a href="#" class="buy">Купить</a>
+     </div>
+   </div>
+ </div>
+
+{{ tovar.name }}
+{{ tovar.name }}
+{{ tovar.name }}
+{{ tovar.name }}
+{{ tovar.name }}
+{{ tovar.name }}
+
+{% endblock %}
+
+

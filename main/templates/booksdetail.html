@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% load bbcode_tags %}
+{% load thumbnail %}
+{% load comments %}
+{% block title %}Главная страница{% endblock %}
+          {%block menu%}
+            {%include "menu.html" with is_main=True%}
+          {%endblock menu%}
+{% block main %}
+  {% include "generic/messages.html" %}
+ <div class="wrapper">
+   <div class="header2">
+        <h1>{{name_context.author}}</h1>
+     <h2>{{ name_context.name }}</h2><br>
+   </div>
+   <div class="body">
+     <div class="book_full">
+       <img class="book_full" src="{{name_context.image.url}}" alt="изображение">
+       <p class= 'popr'>Основная тематика: <b>{{name_context.theme}}</b></p>
+       <p class= 'popr'>Вид издания: <b>{{name_context.edition}}</b></p>
+       <p class= 'popr'>ISBN: <b>{{name_context.isbn}}</b></p>
+       <p class= 'popr'>Теги: <b>{{name_context.tags}}</b></p>
+       <p class= 'popr'>Правообладатель: <b>{{name_context.holder}}</b></p>
+       <p class= 'popr'>Дата выпуска: <b>{{name_context.release|date:"Y" }} год</b></p>
+       <p class= 'popr'>Формат: <b>{{name_context.form}}</b></p>
+       <p class= 'popr'>Объем: <b>{{name_context.number}} стр.</b></p><br>
+
+       <a href="{% url "pdfu" %}" class="w2">Скачать</a> <a href="{% url 'readview' %}" class="w2">Читать на сайте</a> <br> <br><br>
+
+       <a href="{% url "orderview" %}" class="w3">Заказать печатную версию книги</a> <a href="{% url "supportview" %}" class="w2">Поблагодарить</a> <br>
+
+     </div>
+
+
+     <p>Количество отзывов: {{num_comments}}</p>
+
+    <h2>О книге</h2>
+    <hr>
+     <h4>От автора</h4>
+     <p class="author_text">{{name_context.about}}</p>
+     <hr>
+     <h2>Отзывы</h2>
+     {% for i in comments %}
+        <p>{{i.user}} {{i.posted}}</p>
+        <p>{{i.content}}</p>
+        <hr>
+     {% endfor %}
+     <div class="form bottom-indent">
+    <form action="/booksdetail/addcomment/{{ name_context.id }}/" method="post">
+
+        {% include "generic/form.html" %}
+      <div class="submit-button"><input type="submit" value="Добавить"></div>
+    </form>
+ </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,394 @@
+/*#############################################################
+Name: The Hobbit
+Date: 2006-10-11
+Description: Submission for OWD template contest "Favourite Book".
+Author: Viktor Persson
+URL: http://templates.arcsin.se
+
+Feel free to use and modify but please provide credits.
+#############################################################*/
+
+/* standard elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {color: #36C;}
+
+a:hover {color: #06F;}
+/* #4E5D3C */
+body {
+	background: #4E5D3C  url(img/bg.jpg);
+	color: #444;
+	font: normal 62.5% "Lucida Sans Unicode",sans-serif;
+	margin: 0;
+}
+
+p,blockquote,ul {margin-bottom: 1.2em;}
+
+h1 {font: normal 1.6em serif;}
+
+h2 {
+	font: bold 1em Verdana,serif;
+	margin: 3px 0 1px;
+}
+
+ul {margin-left: 1.8em;}
+
+blockquote {
+	background: url(img/quote.gif) no-repeat;
+	color: #555;
+	font: normal 1.4em serif;
+	padding-left: 22px;
+}
+
+blockquote p {padding: 6px;}
+
+/* misc */
+.clearer {clear: both;}
+
+.left {float: left;}
+
+.right {float: right;}
+
+img.left {margin: 0 18px 6px 0;}
+
+.divider {
+
+}
+
+/* structure width: 736px; */
+.container {
+	background: url(img/bgcontainer.jpg) repeat-y center top;
+	margin: 0 auto;
+	width: 980px;
+    min-height: 955px;
+}
+
+.gfx {
+	background: url(img/gfx.png) no-repeat;
+	display: block;
+    float: left;
+    height: 279px;
+    margin-left: -78px;
+    margin-top: 100px;
+    padding-left: 0;
+    width: 108px;
+}
+
+.top {
+	background: url(img/bgcontent.jpg) no-repeat 0 -4%;
+	float: left;
+	text-align: center;
+	width: 921px;
+}
+
+.header {
+	background: #56644A url(img/header.jpg) no-repeat;
+    color: #ffc;
+    font-size: 1.4em;
+    height: 338px;
+    margin-left: 0;
+    padding-right: 272px;
+    width: 649px;
+}
+
+.header h1 {
+	font: 2.2em serif,sans-serif;
+    padding: 37px 0 0;
+    margin-left: 45px;
+}
+.header p {
+    margin-top: 120px;
+}
+.pattern {
+	background: #334127 url(img/pattern.gif) repeat-x;
+	clear: both;
+    height: 18px;
+    width: 921px;
+}
+
+/* navigation */
+.navigation {margin: 0 24px;}
+
+.navigation a {
+	color: #6C7151;
+	font: normal 1.9em serif;
+	line-height: 50px;
+	margin: 0 16px;
+	text-decoration: none;
+}
+.navigation a:hover,.navigation #selected {
+	color: #2C3111;
+
+}
+.navigation ul {
+    margin-top: 20px;
+}
+
+/* content */
+.content {
+
+	clear: both;
+	font-size: 1.2em;
+	margin: 0 52px;
+	padding: 0 38px 12px;
+}
+.content .spacer {
+	height: 42px;
+}
+
+/* content item */
+.item {
+    clear: both;
+    min-height: 20vh;
+}
+
+.item img {border: 1px dashed #8A6;}
+
+.item .title {
+	color: #445044;
+	font: normal 2em serif;
+}
+
+.item .title:first-letter {
+	display: block;
+	float: left;
+	font-size: 2.4em;
+}
+
+.item .metadata {
+	color: #666;
+	font-size: 0.9em;
+	float: left;
+	padding: 0 0 6px 4px;
+}
+
+.item .body {
+	clear: both;
+}
+
+/* footer */
+.footer {
+	background: url(img/bgfooter.jpg) no-repeat;
+	clear: both;
+    color: #666;
+    font-size: 1.1em;
+    height: 45px;
+    line-height: 33px;
+    margin-bottom: -28px;
+    margin-left: -60px;
+    text-align: center;
+    width: 922px;
+    margin-top:25vh;
+}
+
+.footer a {
+	color: #666;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.navigation ul li{
+	display: inline-block;
+}
+
+
+
+#main{
+	background-color: red;
+}
+
+.item2 h3 {
+	float: left;
+}
+.timesnews {
+	float: right;
+}
+.news_content {
+    border: 1px solid;
+    padding:10px;
+    margin:15px;
+}
+.item img {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+.it {
+
+  display: inline-block;
+  width: 80px;
+  height: auto;
+  text-align: center;
+  margin-left: 182px;
+  margin-bottom: 15px;
+}
+.welcome {
+    background: url(img/venzel.gif) no-repeat;
+    height: 20px;
+    margin: 18px 285px;
+    width: 500px;
+}
+.welcome h1 {
+   margin-right: 270px;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 130px;
+}
+.item2 img {
+  display: block;
+  width: 550px;
+  height: auto;
+}
+.current a {
+    color:#000000;
+    background-color: #fff;
+}
+.bodynews {
+	padding-bottom: 20px;
+}
+
+#mainmenu ul li a.current:link, #mainmenu ul li a.current:visited,
+#mainmenu ul li a.current:active, #mainmenu ul li a.current:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+
+}
+
+.active {
+    color: #000000;
+  background-color: #FFFFFF;
+
+}
+
+.posted{
+	float:right;
+}
+
+.newstitle {
+	float:left;
+}
+.success {
+    border: 1px solid red;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+.book_full img {
+
+
+  width: 250px;
+  height: auto;
+  float: left;
+  margin-right: 10px;
+}
+.w1{
+    color:#000000;
+    background-color: #FF983C;
+    text-decoration: none;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: bold;
+}
+.w2{
+	color:#000000;
+	background-color: #FF983C;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 10px 5px 0px 5px;
+    float: right;
+    margin-left: 5px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 140px;
+    line-height: 20px;
+
+
+}
+.w3{
+    color:#000000;
+    background-color: #FF983C;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    float: right;
+    margin-left: 5px;
+    max-width: 140px;
+    text-align: center;
+    min-height: 30px;
+    font-weight: bold;
+
+
+}
+
+.header2 img {
+
+}
+.header2 h2{
+    text-align: center;
+    padding-top: 20px;
+}
+.popr b {
+color:#000000;
+}
+.popr {
+padding: 5px;
+color:#808080;
+}
+.popr p{
+    margin-top: 20px;
+}
+.author_text {
+    padding: 5px;
+
+}
+}
+
+
+
+.label {
+    font-weight: bold;
+}
+
+#id_qty  {
+    width:10%;
+}
+.control select {
+    width:50%;
+}
+#id_post_index {
+    width:20%;
+}
+#id_country{
+    width: 21%;
+}
+#id_honeypot{
+    display: none;
+}
+.control input {
+    width: 30%;
+}
+
+.support h1, p{
+    font-weight: bold;
+}
+.author h1, p{
+    font-weight: bold;
+    margin-left: 45px;
+    margin-top: 20px;
+}
+.item h1 {
+    text-align: center;
+    font-weight: bold;
+}
+.readview {
+    margin-left: 25px;
+    overflow: hidden;
+}

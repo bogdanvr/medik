@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% load bbcode_tags %}
+{% load thumbnail %}
+{% load comments %}
+{% block title %}Главная страница{% endblock %}
+{% block main %}
+  {% include "generic/messages.html" %}
+    <h1>Как приобрести печатную версию книги?</h1>
+    <p>Уважаемые читатели, исследователи и специалисты.
+Информацию о наличии книг Вы можете узнать, отправив заявку по форме ниже.</p>
+     <div class="form bottom-indent">
+    <form action="" method="post">
+
+        {% include "generic/form.html" %}
+      <div class="submit-button"><input type="submit" value="Добавить"></div>
+    </form>
+ </div>
+
+
+
+{% endblock %}

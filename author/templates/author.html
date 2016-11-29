@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% load bbcode_tags %}
+{% load thumbnail %}
+{% load comments %}
+{% block title %}Главная страница{% endblock %}
+{%block menu%}
+    {%include "menu.html" with is_authorview=True%}
+{%endblock menu%}
+{% block main %}
+  {% include "generic/messages.html" %}
+
+<div class="author">
+<h1>    Копьев Юрий Павлович</h1>
+<p>Врач, исследователь, писатель, а также человек с хорошим чувством юмора</p>
+</div>
+
+
+{% endblock %}

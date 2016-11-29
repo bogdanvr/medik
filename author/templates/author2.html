@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% load thumbnail %}
+{% block title %}Главная страница{% endblock %}
+          {%block menu%}
+            {%include "menu.html" with is_article=True%}
+          {%endblock menu%}
+{% block main %}
+
+  <h2>Автор</h2>
+  {% for i in tovars %}
+         <div class="item">
+             <a href="/item2/{{i.alias}}/" class="item2">
+                <img src="{{ i.image }}" alt="">
+                <br>
+                <span class="title">{{ i.name }}</span>
+                <span class="price">{{ i.price }} руб</span>
+            </a>
+        </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}
+
+

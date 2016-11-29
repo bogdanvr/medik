@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" href="{% static "base.css" %}" rel="stylesheet">
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'activemenu.js' %}"></script>
+    {% block additional_css %}
+    {% endblock %}
+    {% block additional_js %}
+    {% endblock %}
+    <title>{% block title %}медик{% endblock %}  Копьев Юрий Павлович</title>
+  </head>
+  <body>
+   {% block content %}
+
+
+    <div class="container">
+      <div class="gfx"><span></span></div>
+      <div class="top">
+          {%block menu%}
+            {%include "menu.html"%}
+          {%endblock menu%}
+        <div class="pattern"><span></span></div>
+        <div class="header">
+          <h1>Копьев </h1>
+          <h1>Юрий Павлович</h1>
+          <p>врач, исследователь, писатель</p>
+        </div>
+        <div class="pattern"><span></span></div>
+      </div>
+      <div class="content">
+        <div class="spacer"></div>
+
+          <div class="body">
+
+        <div class="divider"><span></span></div>
+        <div class="item">
+
+
+                 {% block main %}
+                  {% endblock %}
+
+        </div>
+
+
+      <div class="footer">  <p>Все права принадлежат разработчикам сайта.</p> </div>
+        </div>
+
+{% endblock %}
+    <script src="{% static 'jquery.js' %}"></script>
+  </body>
+</html>

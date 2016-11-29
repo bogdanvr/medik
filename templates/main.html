@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block additional_css %}
+  <link type="text/css" href="{% static "default.css"  %}" rel="stylesheet">
+{% endblock %}
+{% block additional_js %}
+{% endblock %}
+{%block menu%}
+  {%include "menu.html" with is_main=True%}
+{%endblock menu%}
+{% block main %}
+{% endblock %}
+<div id="main">
+
+  </div>
+  <div id="footer">
+
+
+
+  </div>

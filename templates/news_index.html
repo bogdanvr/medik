@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+{% block title %}Новости{% endblock %}
+{%block menu%}
+    {%include "menu.html" with is_news=True%}
+{%endblock menu%}
+{% block main %}
+  {% include "generic/messages.html" %}
+  <h1>Новости</h1><br>
+  {% if perms.news.add_new %}
+    <p><a href="{% url "news_add" %}">Добавить новость</a></p>
+  {% endif %}
+  <div class="feeds">
+
+  </div>
+  {% for object in latest %}
+    <div class="news_content">
+    <h4 class="newstitle"><a href="{% url "news_detail" pk=object.pk %}?page={{ page_obj.number }}">{{ object.title }}</a></h4>
+    <p class="posted">{{ object.posted|date:"j.m.Y H:i" }}</p><br><br>
+    <p>{{ object.description}}</p>
+
+    <p class="buttons bottom-indent">
+      {% if perms.news.change_new %}
+        <a href="{% url "news_edit" pk=object.pk %}?page={{ page_obj.number }}">Изменить</a>
+      {% endif %}
+      {% if perms.news.delete_new %}
+        <a href="{% url "news_delete" pk=object.pk %}?page={{ page_obj.number }}">Удалить</a>
+      {% endif %}
+    </p>
+    </div>
+  {% endfor %}
+  {% include "generic/pagination.html" %}
+{% endblock %}

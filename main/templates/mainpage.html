@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% load thumbnail %}
+{% block title %}Главная страница{% endblock %}
+{% block main %}
+{% include "generic/messages.html" %}
+<div id="books">
+
+</div>
+
+
+  {% for object in main_books %}
+
+    <div class="it">
+
+           <a href="/booksdetail/{{object.id}}"><img src="{{object.image.url}}" alt="Книга"></a><br>
+           <a class="w1" href="/booksdetail/{{object.id}}">Подробнее</a>
+        </div>
+
+  {% endfor %}
+<div class="welcome">
+ <h1>Добро пожаловать!</h1>
+ </div>
+{% endblock %}

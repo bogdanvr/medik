@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% load bbcode_tags %}
+{% load thumbnail %}
+{% load comments %}
+{% block title %}Читать с сайта{% endblock %}
+{% block main %}
+  {% include "generic/messages.html" %}
+<div class="readview">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.ru/books?id=LwO1GzMN_QsC&lpg=PR2&dq=django&hl=ru&pg=PA115&output=embed" width=750 height=920></iframe>
+
+</div>
+
+{% endblock %}

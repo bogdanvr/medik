@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,14 +78,28 @@ WSGI_APPLICATION = 'medik.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'data/medik_db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'cn68880_medikenv',
+        'USER': 'cn68880_medikenv',
+        'PASSWORD': 'bgd@2517',
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = ('/home/c/cn68880/medikenv/public_html/static/', )
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+LOGIN_REDIRECT_URL = "main"
+SITE_ID = 1
+THUMBNAIL_BASEDIR = "thumbnails"
+LOGIN_URL = "login"
+LOGOUT_URL = "logout"
+
 LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Asia/Omsk'

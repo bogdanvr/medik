@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 
 from django.views.generic.dates import ArchiveIndexView
@@ -9,10 +10,9 @@ from django.contrib import messages
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
 from django.core.mail import send_mass_mail
-
+from main.views import PageNumberView
 from news.models import New
-from generic.mixins import CategoryListMixin, PageNumberMixin
-from generic.controllers import PageNumberView
+from contacts.views import CategoryListMixin, PageNumberMixin
 
 
 class NewsListView(ArchiveIndexView, CategoryListMixin):

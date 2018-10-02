@@ -1,12 +1,13 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 
 from django.views.generic.base import TemplateView
-from generic.mixins import CategoryListMixin
-from generic.controllers import PageNumberView
+from contacts.views import CategoryListMixin
+#from generic.controllers import PageNumberView
 from django.views.generic.list import ListView
 from main.models import Books
 from main.forms import BookForm
-
+from django.views.generic.base import View
 from django.views.generic.dates import ArchiveIndexView
 from django.views.generic import ListView
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -22,6 +23,41 @@ from reportlab.lib.units import cm
 import datetime
 from django.contrib import messages
 
+class PageNumberView(View):
+  def get(self, request, *args, **kwargs):
+    try:
+      self.sort = self.request.GET["sort"]
+    except KeyError:
+      self.sort = "0"
+    try:
+      self.order = self.request.GET["order"]
+    except KeyError:
+      self.order = "A"
+    try:
+      self.search = self.request.GET["search"]
+    except KeyError:
+      self.search = ""
+    try:
+      self.tag = self.request.GET["tag"]
+    except KeyError:
+      self.tag = ""
+    return super(PageNumberView, self).get(request, *args, **kwargs)
+
+  def post(self, request, *args, **kwargs):
+    try:
+      pn = request.GET["page"]
+    except KeyError:
+      pn = "1"
+    self.success_url = self.success_url + "?page=" + pn
+    try:
+      self.success_url = self.success_url + "&search=" + request.GET["search"]
+    except KeyError:
+      pass
+    try:
+      self.success_url = self.success_url + "&tag=" + request.GET["tag"]
+    except KeyError:
+      pass
+    return super(PageNumberView, self).post(request, *args, **kwargs)
 
 
 

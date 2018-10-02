@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'medik.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'cn68880_medikenv',
-        'USER': 'cn68880_medikenv',
-        'PASSWORD': 'bgd@2517',
+        'NAME': '*',
+        'USER': '*',
+        'PASSWORD': '*',
     }
 }
 
@@ -89,7 +89,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = ('/home/c/cn68880/medikenv/public_html/static/', )
+STATICFILES_DIRS = ('*', )
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
